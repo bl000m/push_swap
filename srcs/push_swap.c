@@ -6,7 +6,7 @@
 /*   By: mpagani <mpagani@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 16:19:20 by mpagani           #+#    #+#             */
-/*   Updated: 2022/12/17 12:40:41 by mpagani          ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 16:34:50 by mpagani          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push_swap(t_stack **stack_a)
 		case_5(stack_a);
 	else if (stack_size(*stack_a) > 5 && stack_size(*stack_a) <= 100)
 		case_100(stack_a);
-	else if (stack_size(*stack_a) > 100 && stack_size(*stack_a) <= 500)
+	else if (stack_size(*stack_a) > 100)
 		case_500(stack_a);
 	stack_free(stack_a);
 }

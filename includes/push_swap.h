@@ -6,7 +6,7 @@
 /*   By: mpagani <mpagani@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 16:01:31 by mpagani           #+#    #+#             */
-/*   Updated: 2022/12/17 13:48:42 by mpagani          ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 17:38:46 by mpagani          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ char	**if_to_split(int *argc, char **argv, int *is_free);
 
 /* Checking errors etc */
 void	exit_error(void);
-int		check_duplicate(t_stack *stack);
+int		check_duplicate(t_stack *stack, int argc);
 int		check_input(char **argv);
 int		is_overflow(char *argv);
 int		is_sign(char c);
 int		is_number(char *argv);
 int		is_zero(char *argv);
 int		spaces(char *c);
+void	check_first(int argc, char **argv);
 
 /* Algo sorting */
 void	push_swap(t_stack **stack_a);
@@ -76,5 +77,6 @@ int		find_index(t_stack **stack_a, int min, int max);
 void	index_top(t_stack **stack, int index, char choice);
 void	index_bottom(t_stack **stack, int index, char choice);
 int		how_much_lower(int *indexes, int nb, int size);
+int		if_digit(char n);
 
 #endif

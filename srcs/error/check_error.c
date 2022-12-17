@@ -6,7 +6,7 @@
 /*   By: mpagani <mpagani@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 12:09:20 by mpagani           #+#    #+#             */
-/*   Updated: 2022/12/15 16:21:16 by mpagani          ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 17:41:41 by mpagani          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ int	check_input(char **argv)
 	return (1);
 }
 
-int	check_duplicate(t_stack *stack)
+int	check_duplicate(t_stack *stack, int argc)
 {
 	t_stack	*runner_1;
 	t_stack	*runner_2;
 
+	if (argc < 2)
+		return (1);
 	runner_1 = stack;
 	runner_2 = runner_1->next;
 	if (stack_size(stack) == 1)

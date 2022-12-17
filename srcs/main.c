@@ -6,7 +6,7 @@
 /*   By: mpagani <mpagani@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 18:28:35 by mpagani           #+#    #+#             */
-/*   Updated: 2022/12/17 13:29:41 by mpagani          ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 17:43:55 by mpagani          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,27 @@ int	main(int argc, char **argv)
 	}
 	if (argv == NULL)
 		return (0);
-	if (argc <= 2)
-		return (0);
+	check_first(argc, argv);
 	if (!check_input(argv))
 		exit_error();
 	stack_a = create_stack(argc, argv);
 	if (is_free)
 		array_free(argv, argc);
-	if (!check_duplicate(stack_a))
+	if (!check_duplicate(stack_a, argc))
 		exit_error();
 	push_swap(&stack_a);
+}
+
+void	check_first(int argc, char **argv)
+{
+	if (argc < 2)
+	{
+		if (!is_number(argv[0]))
+		{
+			exit_error();
+		}
+		return ;
+	}
 }
 
 char	**if_to_split(int *argc, char **argv, int *is_free)
