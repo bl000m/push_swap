@@ -6,7 +6,7 @@
 /*   By: mpagani <mpagani@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:33 by mpagani           #+#    #+#             */
-/*   Updated: 2022/12/17 13:38:04 by mpagani          ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 17:55:13 by mpagani          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void	target_to_top(t_stack **stack, int index, char choice)
 
 void	order_stack_b(t_stack **stack_b)
 {
-	int	index_min;
+	int	index_max;
 
 	if (!(*stack_b))
 		return ;
-	index_min = ft_min(*stack_b);
-	target_to_top(stack_b, index_min, 'b');
+	index_max = ft_max(*stack_b);
+	target_to_top(stack_b, index_max, 'b');
 }
 
 void	target_to_b(t_stack **stack_a, int min, int max, t_stack **stack_b)
